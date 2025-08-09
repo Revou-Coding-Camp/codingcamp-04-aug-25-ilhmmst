@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchBar = document.getElementById("searchBar");
   const deleteAllButton = document.getElementById("deleteAllButton");
 
-  // Calendernya Flatpickr
   flatpickr("#dateInput", {
     dateFormat: "d-m-Y",
   });
@@ -44,8 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const taskDate = dateInput.value;
 
     if (taskText === "" && taskDate === "") {
-      console.log("Task text and date cannot be empty!.");
-
       alert("Task text and date cannot be empty!.");
       return;
     }
@@ -65,8 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
     taskInput.value = "";
     dateInput.value = "";
     renderTasks();
-
-    console.log(`Task added: "${taskText}" with date: "${taskDate}"`);
   }
 
   function deleteTask(index) {
@@ -75,8 +70,6 @@ document.addEventListener("DOMContentLoaded", () => {
     tasks.splice(index, 1);
     saveTasks();
     renderTasks();
-
-    console.log(`Task deleted: "${deletedTaskText}"`);
   }
 
   function deleteAllTasks() {
@@ -84,22 +77,15 @@ document.addEventListener("DOMContentLoaded", () => {
       tasks = [];
       saveTasks();
       renderTasks();
-
-      console.log("All tasks have been deleted.");
     }
   }
 
   function editTask(index) {
-    const oldTaskText = tasks[index].text;
     const newTaskText = prompt("Edit tugas:", tasks[index].text);
     if (newTaskText !== null && newTaskText.trim() !== "") {
       tasks[index].text = newTaskText.trim();
       saveTasks();
       renderTasks();
-
-      console.log(
-        `Task edited: "${oldTaskText}" changed to "${newTaskText.trim()}"`
-      );
     }
   }
 
