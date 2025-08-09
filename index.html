@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List Simple</title>
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=panchang@200,300,400,500,600,700,800,1&f[]=satoshi@300,301,400,401,500,501,700,701,900,901,1,2&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="header-contain">
+        <h1>todolist</h1>
+      </div>
+      <div class="input-container">
+        <input type="text" id="taskInput" placeholder="Your text..." />
+        <input
+          type="text"
+          id="dateInput"
+          class="date-picker"
+          placeholder="Date"
+        />
+        <button id="addButton">ADD</button>
+      </div>
+      <div class="controls">
+        <input type="text" id="searchBar" placeholder="Search..." />
+        <button id="deleteAllButton">DELETE ALL</button>
+      </div>
+      <div class="container">
+        <h1>Your Tasks</h1>
+        <ul id="taskList"></ul>
+      </div>
+      <footer>
+        <h2>&copy; 2k25 ilhmmst</h2>
+      </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>
